@@ -1,3 +1,4 @@
+import Link from 'next/link'
 export default () => (
   <div>
   <style jsx>{`
@@ -233,7 +234,7 @@ pre.line-numbers > code {
 
                 <p><em>This article originally appeared on <a href="https://css-tricks.com/react-forms-using-refs/" target="_blank">CSS-Tricks</a> in a slightly modified form.</em> <br></br></p>
 
-<p className="it">React.js proporciona dos formas estándar para obtener valores de elementos de formulario. El primer método es implementar lo que se llama "componentes controlados" - echa un vistazo a mi <a href="http://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/" target="_blank">blog en el tema</a> - y el segundo es usar la propiedad <code>ref</code> de React .</p>
+<p className="it">React.js proporciona dos formas estándar para obtener valores de elementos de formulario. El primer método es implementar lo que se llama "componentes controlados" - echa un vistazo a mi <a href="http://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/" target="_blank">blog en el tema</a> - o mi versión traducida <Link href='/015'><a>React.js Forms: Controlled Components</a></Link> y el segundo es usar la propiedad <code>ref</code> de React .</p>
 
 <p>React.js provides two standard ways to grab values from form elements. The first method is to implement what is called 'controlled components' – check out my <a href="http://lorenstewart.me/2016/10/31/react-js-forms-controlled-components/" target="_blank">blog post on the topic</a> – and the second is to use React's <code>ref</code> property.</p>
 

@@ -1,0 +1,72 @@
+Ahora hemos visto cómo agregar estado a nuestros componentes.
+Los componentes de estado son potentes, pero también aportan mucha complejidad a nuestras aplicaciones.
+Es importante pensar cuidadosamente en dónde reside el estado en nuestras aplicaciones.
+Si tenemos una docena de componentes cada uno manteniendo su propio estado, puede llegar a ser muy engorroso construir y mantener nuestras aplicaciones.
+
+Una idea importante para entender es que hay diferentes tipos de estado.
+
+Hay dos tipos principales de estado que considero al diseñar una aplicación de reaccionar.
+
+Estado de la aplicación y estado del componente.
+
+El estado de aplicación es el estado principal que normalmente pensamos.
+
+Por lo general, los datos que nuestra aplicación está diseñada para mostrar y manipular.
+1
+En nuestra aplicación de marcador, el estado de la aplicación incluye cosas como la lista de jugadores y sus puntuaciones.
+
+El estado del componente local es el estado en el que un componente puede confiar para funcionar, pero no pensamos que sea fundamental para nuestra aplicación.
+
+El estado de los componentes no suele ser compartido o visible fuera del componente y es simplemente el estado que se requiere para que un componente haga su trabajo.
+
+Veremos algunos ejemplos específicos de los componentes locales en breve, pero los datos en los que hemos estado trabajando realmente serían considerados como un estado de aplicación.
+
+Un principio de diseño del estado de la aplicación es que debe ser administrado la aplicación como sea posible.
+
+Esto tiene que ver con cómo los datos fluyen naturalmente a través de una aplicación de reacción.
+Los datos fluyen naturalmente a través de nuestro árbol de aplicaciones.
+Desde el componente de nivel superior, hasta los componentes más pequeños que componen los más grandes.
+
+Pasamos datos alrededor de las propiedades de uso nuestro componente de aplicación le dirá a nuestro jugador componente todo sobre el jugador que representa pasando las propiedades.
+
+Es importante entender que nuestro componente de aplicación no mantiene las instancias de los componentes del reproductor se almacenan en algún tipo de variable.
+
+Nunca creó realmente las instancias reales del jugador ellos mismos, más bien se acaba de describir que deben existir y deben tener estas propiedades.
+
+Esto significa para componentes como nuestra aplicación no puede llamar fácilmente a los métodos de los niños para actualizar los datos.
+
+En su lugar, sólo volverían a representar a los nuevos niños con propiedades actualizadas.
+
+También los niños no saben acerca de los componentes padres que los contienen.
+
+Un componente sólo sabe de sí mismo, qué propiedades se pasan a él, y los niños que el componente puede representar.
+
+Este es el resultado de nuestro modelo declarativo de programación.
+
+Podemos hacer que los datos fluyan fácilmente de padres a hijos usando propiedades.
+
+Un componente puede utilizar las propiedades que se le pasan, para determinar los datos a transmitir a sus propios hijos.
+
+Esto se llama flujo de datos unidireccional.
+
+Si bien puede parecer restrictivo y un poco extraño al trabajar con él, nos proporciona la capacidad de razonar sobre nuestras aplicaciones mucho más fácilmente.
+
+Esto se debe a que los datos de nuestro componente provienen de un lugar, su matriz.
+
+Y no una mezcolanza de varias fuentes de datos, a lo largo de la aplicación.
+
+Así que los datos fluyen hacia abajo y si los datos cambian en la parte superior, pasará en cascada a través de nuestro árbol DOM virtual, actualizando cada componente.
+
+Pero, ¿qué hacemos cuando queremos hacer cambios? Y una aplicación de reacción pura usará típicamente propiedades que son callback funciones.
+
+Dado que el elemento hijo no tiene forma de comunicarse directamente con su padre, podemos divinar ciertos eventos que manipularán los datos e implementarlos como funciones de devolución de llamada.
+
+Cuando un niño quiere indicar que el estado de la aplicación debe cambiar, ejecutará la función de devolución de llamada y el padre sabrá qué hacer con esos datos.
+
+A menudo, las funciones de devolución de llamada pueden activar otra función de devolución de llamada para su propio padre.
+
+Una y otra vez, a través de la aplicación.
+
+Actualmente, nuestra aplicación tiene estado en un par de lugares.
+
+A continuación reestructuraremos nuestro estado y flujo de datos a ser mucho más unidireccional.
