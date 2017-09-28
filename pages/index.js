@@ -8,5 +8,8 @@ export default () => (
   <Link href='/014'><a>Flatten multi-dimensional JavaScript arrays with ES6</a></Link><br></br>
   <Link href='/015'><a>React.js Forms: Controlled Components</a></Link><br></br>
   <Link href='/016'><a>React.js Forms: Using Refs</a></Link><br></br>
+  <Link href='/020'><a>React.js Forms: Otro</a></Link><br></br>
+  <Link href='/021'><a>React.js Forms: Otro Events</a></Link><br></br>
+  <Link href='/030'><a>React.js 4 consejos</a></Link><br></br>
   <Link href='/about'><a>About</a></Link></div>
 )
